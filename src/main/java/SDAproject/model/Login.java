@@ -1,13 +1,23 @@
 package SDAproject.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 public class Login {
-    @PrimaryKeyJoinColumn(referencedColumnName = "email")
-    String email;
+
+    @Id
+    String nickname;
     String pass;
 
 }
