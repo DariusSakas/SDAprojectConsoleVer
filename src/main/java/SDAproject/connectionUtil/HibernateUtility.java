@@ -28,7 +28,7 @@ public class HibernateUtility {
                 properties.put(Environment.URL, "jdbc:mysql://localhost:3306/sdaproject?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true");
                 properties.put(Environment.USER, "root");
                 properties.put(Environment.PASS, "root");
-                properties.put(Environment.HBM2DDL_AUTO, "update"); //update, create-drop, create
+                properties.put(Environment.HBM2DDL_AUTO, "create-drop"); //update, create-drop, create
 
                 configuration.setProperties(properties);
 

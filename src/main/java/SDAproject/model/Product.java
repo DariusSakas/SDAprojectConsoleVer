@@ -6,26 +6,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
+@Table(name = "PRODUCT")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    int quantity;
-    String description;
-    int price;
-    boolean wassent;
-    boolean wasdelivered;
+    private Long product_id;
+    private String name;
+    private int quantity;
+    private String description;
+    private int price;
+    private boolean wassent;
+    private boolean wasdelivered;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
 }

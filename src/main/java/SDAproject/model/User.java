@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -13,13 +14,16 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
+@Table(name = "USER")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String nickname;
-    int fundsAmount;
-    Product product;
+    private Long user_id;
+    private String nickname;
+    private int fundsAmount;
+
+    @OneToMany(mappedBy = "user")
+    private List<Product> products;
 
 }

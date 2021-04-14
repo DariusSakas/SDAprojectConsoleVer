@@ -6,18 +6,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
+@Table(name = "LOGIN")
 public class Login {
 
     @Id
-    String nickname;
-    String pass;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String nickname;
+    private String pass;
 
 }
