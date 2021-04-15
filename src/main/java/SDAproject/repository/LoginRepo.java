@@ -74,12 +74,12 @@ public class LoginRepo {
         while (loginNameResultSet.next()) {
            loginNameResultList.add(loginNameResultSet.getString("nickname"));
         }
-        loginNameResultList.stream().filter(e->e.equals(nickName)).forEach({return "a";};);
+//        loginNameResultList.stream().filter(e->e.equals(nickName) ? throwNewLoginException());
         setTakenLoginName(false);
         return nickName;
     }
-//    private void checkIfLoginAvaible(){
-
-//    }
+    private void throwNewLoginException() throws LoginAllreadyTakenException {
+        throw new LoginAllreadyTakenException();
+   }
 
 }
