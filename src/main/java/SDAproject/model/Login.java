@@ -17,7 +17,6 @@ import javax.persistence.*;
 public class Login {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String nickname;
     private String pass;
 
