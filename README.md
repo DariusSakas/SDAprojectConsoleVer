@@ -2,6 +2,9 @@
 
 ## Description
 Program concept and idea solves problem of buying and selling goods online, without risk of losing funds for a package as a buyer and a seller.
+
+30 % finished;
+
 ## Built with
 Programming language:
  - Java 8
