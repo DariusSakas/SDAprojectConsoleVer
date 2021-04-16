@@ -22,8 +22,10 @@ public class ShowLoginMenu {
             switch (loginScanner.next()) {
                 case ("1"):
 
+                    break;
                 case ("2"):
                     loginRepo.createNewAccount();
+                    break;
                 default:
                     System.out.println("No such choice");
             }

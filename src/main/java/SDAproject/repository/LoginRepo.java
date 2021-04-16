@@ -5,7 +5,6 @@ import SDAproject.connectionUtil.HibernateUtility;
 import SDAproject.model.Login;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +16,8 @@ import java.util.Scanner;
 
 public class LoginRepo {
 
-    private static final String SELECT_FROM_LOGIN = "SELECT nickname FROM LOGIN";
+    private String nickname;
+
 
     private Scanner loginScanner = new Scanner(System.in);
 
@@ -35,8 +35,11 @@ public class LoginRepo {
 
     private boolean takenLoginName = true;
 
-    public void setTakenLoginName(boolean takenLoginName) {
-        this.takenLoginName = takenLoginName;
+    private void setTakenLoginName(boolean value) {
+        this.takenLoginName = value;
+    }
+    private void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public void createNewAccount() {
@@ -64,22 +67,26 @@ public class LoginRepo {
 
     private String insertNickName() throws LoginAllreadyTakenException, SQLException {
         System.out.println("Type your nickname:");
-        String nickName = loginScanner.next();
+
+        setNickname(loginScanner.next());
+
+        String SELECT_FROM_LOGIN = String.format("SELECT * FROM LOGIN WHERE nickname = '%s'", nickname);
 
         PreparedStatement preparedFindNickNameStatement = connection.prepareStatement(
-                SELECT_FROM_LOGIN    );
+                SELECT_FROM_LOGIN);
         ResultSet loginNameResultSet = preparedFindNickNameStatement.executeQuery();
         List<String> loginNameResultList = new ArrayList<>();
 
         while (loginNameResultSet.next()) {
-           loginNameResultList.add(loginNameResultSet.getString("nickname"));
+            loginNameResultList.add(loginNameResultSet.getString("nickname"));
         }
+        if (loginNameResultList.isEmpty()){
+            setTakenLoginName(false);
+            return nickname;
+        }
+        else
+            throw new LoginAllreadyTakenException();
 //        loginNameResultList.stream().filter(e->e.equals(nickName) ? throwNewLoginException());
-        setTakenLoginName(false);
-        return nickName;
-    }
-    private void throwNewLoginException() throws LoginAllreadyTakenException {
-        throw new LoginAllreadyTakenException();
-   }
 
+    }
 }
