@@ -14,5 +14,5 @@ Program concept and idea solves problem of buying and selling goods online, with
  - One user can have many products (@OneToMany realationship);
  - Mapped by user_id;
  - Login is separate table for adding credentials of a new user;
-<iframe width="560" height="315" src='https://dbdiagram.io/embed/60728f4eecb54e10c33fae16'> </iframe>
+<a href="https://ibb.co/VDK21dP"><img src="https://i.ibb.co/3WJB3wL/Screenshot-20210417-011748.png" alt="Screenshot-20210417-011748" border="0"></a>
 
