@@ -1,4 +1,4 @@
-package SDAproject.Exceptions;
+package SDAproject.exceptions;
 
 public class LoginAllreadyTakenException extends Exception{
 

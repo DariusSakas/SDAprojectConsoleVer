@@ -1,6 +1,6 @@
 package SDAproject.repository;
 
-import SDAproject.Exceptions.LoginAllreadyTakenException;
+import SDAproject.exceptions.LoginAllreadyTakenException;
 import SDAproject.connectionUtil.HibernateUtility;
 import SDAproject.model.Login;
 import org.hibernate.Session;
