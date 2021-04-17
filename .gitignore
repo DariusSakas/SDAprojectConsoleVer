@@ -1,4 +1,4 @@
 /src/main/java/HibernateTask2/
-/target/
-/.idea/
+/target
+/.idea
 .gitignore
