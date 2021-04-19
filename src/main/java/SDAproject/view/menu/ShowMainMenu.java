@@ -1,6 +1,6 @@
-package SDAproject.showMenu;
+package SDAproject.view.menu;
 
-import SDAproject.view.Header;
+import SDAproject.view.viewElements.Header;
 
 public class ShowMainMenu {
     private void showMenu(){

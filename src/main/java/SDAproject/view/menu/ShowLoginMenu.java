@@ -1,8 +1,7 @@
-package SDAproject.showMenu;
+package SDAproject.view.menu;
 
 import SDAproject.repository.LoginRepo;
-import SDAproject.view.CreatingNewAccount;
-import SDAproject.view.Header;
+import SDAproject.view.viewElements.CreatingNewAccount;
 
 import java.util.Scanner;
 

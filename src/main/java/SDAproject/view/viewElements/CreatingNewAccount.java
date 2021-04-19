@@ -1,11 +1,12 @@
-package SDAproject.view;
+package SDAproject.view.viewElements;
 
-public class Header {
-    public static void createHeader(){
+public class CreatingNewAccount {
+
+    public static void createNewAccHeader() {
         System.out.println("----------------------------------------------------------------------------------------------------------------");
-        System.out.println("-----------------------------------------BUY AND SELL APPLICATION-----------------------------------------------");
+        System.out.println("-----------------------------------------CREATING NEW ACCOUNT---------------------------------------------------");
         System.out.println("----------------------------------------------------------------------------------------------------------------");
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             System.out.println();
         }
     }

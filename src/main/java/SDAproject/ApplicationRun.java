@@ -1,9 +1,7 @@
 package SDAproject;
 
 import HibernateTask2.util.HibernateTask2Utility;
-import SDAproject.connectionUtil.HibernateUtility;
-import SDAproject.showMenu.ShowLoginMenu;
-import org.hibernate.Session;
+import SDAproject.view.menu.ShowLoginMenu;
 
 public class ApplicationRun {
     public static void main(String[] args) {
